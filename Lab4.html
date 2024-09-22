@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+    <html>
+        <head> 
+            <title>Lab 4</title>
+            <link rel="stylesheet" href="style.css">
+        </head>
+        <body>
+            <h1 id="heading">Lab 4 </h1>
+            <div class="section">
+                <form name="nameForm" onsubmit="return alertName()">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" required>
+                    <input type="submit" value="Alert Me">
+                </form>
+            </div>
+            <script>
+                function alertName() {
+                    const name = document.getElementById("name").value;
+                    alert("Hi " + name + " !")
+                    return false;
+                }
+            </script>
+        
+            <div class="section">
+                <button onclick="colorChange()"> Change Color</button>
+            </div>
+            <script>
+                function colorChange() {
+                    if(document.body.style.backgroundColor == 'purple'){
+                        const t = document.body.style.backgroundColor = 'red';
+                    }else{
+                        const t = document.body.style.backgroundColor = 'purple';
+                    }
+                }
+            </script>
+
+            <div class="section">
+                <form name="tester" onsubmit="return testResults()">
+                    <label for="test"> Text Tester:</label>
+                    <input type="text" id="tester" required>
+                    <input type="submit" value="Validate Text">
+                </form>    
+            </div>
+            <script>
+                    function testResults() {
+                    const validation = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+                    const text = document.getElementById("tester").value;
+                    if(validation.test(text)){
+                        alert("There is special characters")
+                        return false;
+                    }else{
+                        return false;
+                    }
+                    }
+                </script>
+
+            <div class="section">
+                <button onclick="addText()">Add Text</button>
+            </div>
+            <script>
+                function addText() {
+                    const heading = document.getElementById("heading");
+                    if (!heading.innerHTML.includes("Add Text")){
+                        heading.innerHTML += " Add Text";
+                    }
+                }
+            </script>
+        </body>
+    </html>
