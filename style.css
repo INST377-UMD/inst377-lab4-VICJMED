@@ -1,0 +1,14 @@
+
+.section{
+    border: 5px solid greenyellow;
+    padding: 35px;
+    margin: 10px;
+    width: 40%;
+    background-color: aquamarine;
+    display:inline-block;
+    text-align: center;
+}
+.button{
+    padding: 15px 25px;
+    margin: auto;
+}
